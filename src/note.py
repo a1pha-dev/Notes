@@ -10,6 +10,9 @@ class Note:
         self.__text: str = text
         self.__date: datetime.datetime = date
 
+    def __str__(self) -> str:
+        return f"{self.__id} {self.__name}\n{self.__text}"
+
     @classmethod
     def auto_increment(cls) -> int:
         cls.__id += 1
@@ -25,5 +28,8 @@ class Note:
     def get_text(self) -> str:
         return self.__text
 
-    def get_date(self) -> str:
+    def get_date(self) -> datetime.datetime:
         return self.__date
+
+    def get_id(self) -> str:
+        return self.__id
